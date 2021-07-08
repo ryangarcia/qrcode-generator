@@ -27,7 +27,7 @@ app.post("/scan", (req, res) => {
 
     In case of error, it will save the error inside of "err" and display it.
   */
-  qr.toDataURL(url, (err, src) => {
+  qr.toDataURL(url, { color: { dark:"#74C947" } }, (err, src) => {
     if (err) res.send("Error occured");
 
     res.render("scan", { src });
